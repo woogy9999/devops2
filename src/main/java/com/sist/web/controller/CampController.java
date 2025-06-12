@@ -27,7 +27,7 @@ public class CampController {
 		int end=(rowSize*curpage);
 		
 		List<CampListVO> list=cService.campListData(start, end);
-		int totalpage=cService.CampTotalpage();
+		int totalpage=cService.campTotalpage();
 		
 		final int BLOCK=10;
 		int startPage=((curpage-1)/BLOCK*BLOCK)+1;

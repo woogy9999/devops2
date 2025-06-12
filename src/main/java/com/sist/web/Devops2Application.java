@@ -10,5 +10,5 @@ public class Devops2Application {
 		SpringApplication.run(Devops2Application.class, args);
 	}
 
-}
+} 
     

@@ -17,7 +17,7 @@ public interface CampRepository extends JpaRepository<CampEntity, Integer>{
 			+ "FROM (SELECT cno,title,poster "
 			+ "FROM CAMP ORDER BY cno ASC)) "
 			+ "WHERE num BETWEEN :start AND :end",nativeQuery = true)
-	public List<CampListVO> foodListData(@Param("start") int start, @Param("end") int end);
+	public List<CampListVO> campListData(@Param("start") int start, @Param("end") int end);
 	
 	public CampEntity findByCno(int cno);
 	

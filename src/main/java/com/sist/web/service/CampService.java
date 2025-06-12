@@ -11,6 +11,7 @@ public interface CampService {
 
 	public List<CampListVO> campListData(int start, int end);
 	public CampEntity campDetailData(int cno);
-	public int CampTotalpage();
+	public int campTotalpage();
+	
 	
 }

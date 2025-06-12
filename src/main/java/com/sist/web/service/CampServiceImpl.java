@@ -17,7 +17,7 @@ public class CampServiceImpl implements CampService {
 	@Override
 	public List<CampListVO> campListData(int start, int end) {
 		// TODO Auto-generated method stub
-		return cDao.foodListData(start, end);
+		return cDao.campListData(start, end);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class CampServiceImpl implements CampService {
 	}
 
 	@Override
-	public int CampTotalpage() {
+	public int campTotalpage() {
 		// TODO Auto-generated method stub
 		int count=(int)cDao.count();
 		return (int)(Math.ceil(count/12.0));

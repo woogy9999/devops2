@@ -3,14 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- Bootstrap 3 CSS CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<style>
+  /* 네비바 배경을 밝은 회색 + 텍스트 짙은 회색 */
+  .navbar-custom {
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .navbar-custom .navbar-brand {
+    color: #343a40;
+    font-weight: bold;
+  }
+
+  .navbar-custom .navbar-nav > li > a {
+    color: #495057;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .navbar-custom .navbar-nav > li > a:hover,
+  .navbar-custom .navbar-nav > .active > a {
+    color: #007bff;
+    background-color: transparent;
+  }
+
+  /* 가운데 정렬 */
+  .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>
+
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
+  
+<nav class="navbar navbar-custom">
   <div class="container-fluid">
+    <!-- 브랜드 로고 -->
     <div class="navbar-header">
       <a class="navbar-brand" href="/">CI/CD</a>
     </div>
-    <ul class="nav navbar-nav">
+
+    <!-- 메뉴: 가운데 정렬 -->
+    <ul class="nav navbar-nav navbar-center">
       <li class="active"><a href="/">Home</a></li>
       <li><a href="#">캠핑 검색</a></li>
       <li><a href="/board/list">게시판</a></li>
