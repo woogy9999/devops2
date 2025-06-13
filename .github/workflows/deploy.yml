@@ -49,7 +49,7 @@ jobs:
     #    kill -9 $(ps -ef | grep devops | grep -v grep | head -n 1 | awk '{print $2}') || true
 
     - name: Deploy to Server
-      run: scp build/libs/*.jar ubuntu@15.164.129.235:~/app
+      run: scp -i ~/.ssh/id_ed25519 build/libs/*.jar ubuntu@15.164.129.235:~/app
 
 
     - name: Run SSH commands
