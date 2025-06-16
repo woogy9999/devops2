@@ -42,7 +42,7 @@ jobs:
 
     - name: Add known_hosts
       run: |
-        ssh-keyscan -t ed25519 54.180.90.11 >> ~/.ssh/known_hosts
+        ssh-keyscan -t ed25519 52.78.150.131 >> ~/.ssh/known_hosts
 
     #- name: 기존프로세스 종료
     #  run: |
@@ -51,11 +51,11 @@ jobs:
     - name: Deploy with rsync
       run: |
         timeout 60s rsync -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" \
-          -avz build/libs/*.jar ubuntu@54.180.90.11:~/app
+          -avz build/libs/*.jar ubuntu@52.78.150.131:~/app
 
     - name: Run SSH commands
       run: |
-        ssh -i ~/.ssh/id_ed25519 ubuntu@54.180.90.11 << 'EOF'
+        ssh -i ~/.ssh/id_ed25519 ubuntu@52.78.150.131 << 'EOF'
           pkill -f 'java -jar' || true
           nohup java -jar ~/app/devops2-0.0.1-SNAPSHOT.jar > log.txt 2>&1 &
         EOF
