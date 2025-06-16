@@ -48,10 +48,11 @@ jobs:
     #  run: |
     #    kill -9 $(ps -ef | grep devops | grep -v grep | head -n 1 | awk '{print $2}') || true
 
-    - name: Deploy with scp
+    - name: Deploy with rsync
       run: |
-        scp -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no build/libs/*.jar ubuntu@52.78.150.131:~/app/
-
+        rsync -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" \
+          -avz build/libs/*.jar ubuntu@52.78.150.131:~/app
+          
     - name: Run SSH commands
       run: |
         ssh -i ~/.ssh/id_ed25519 ubuntu@52.78.150.131 << 'EOF'
